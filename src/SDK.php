@@ -7,6 +7,7 @@ use GuzzleHttp\ClientInterface;
 use TransferWise\Exception\Exception;
 use TransferWise\Service\ExchangeRates;
 use TransferWise\Service\Quotes;
+use TransferWise\Service\Transfers;
 use TransferWise\Service\Users;
 
 class SDK
@@ -28,17 +29,22 @@ class SDK
 
     public function users(): Users
     {
-        return new Users();
+        return new Users($this->client);
     }
 
     public function quotes(): Quotes
     {
-        return new Quotes();
+        return new Quotes($this->client);
     }
 
     public function exchangeRates(): ExchangeRates
     {
-        return new ExchangeRates();
+        return new ExchangeRates($this->client);
+    }
+
+    public function transfers(): Transfers
+    {
+        return new Transfers($this->client);
     }
 
     /**

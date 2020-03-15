@@ -45,8 +45,12 @@ $token = 'your-api-token-here';
 $client = SDK::createClient($token, SDK::API_MODE_SANDBOX);
 $sdk = new SDK($client);
 
+// Show current authenticated user
 /** @var \TransferWise\Model\Token $whoami */
 $whoami = $sdk->users()->me();
+
+// List transfers
+$transfers = $sdk->transfers()->list(['status' => 'funds_refunded']);
 ```
 
 ## Contributions
