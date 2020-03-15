@@ -1,0 +1,49 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "id": 11111111,
+    "user": 294205,
+    "targetAccount": 7993919,
+    "sourceAccount": null,
+    "quote": 113379,
+    "status": "funds_refunded",
+    "reference": "good times",
+    "rate": 1.1179,
+    "created": "2018-12-16 15:25:51",
+    "business": null,
+    "transferRequest": null,
+    "details": {
+      "reference": "good times"
+    },
+    "hasActiveIssues": false,
+    "sourceValue": 1000,
+    "sourceCurrency": "EUR",
+    "targetValue": 895.32,
+    "targetCurrency": "GPB",
+    "customerTransactionId": "6D9188CF-FA59-44C3-87A2-4506CE9C1EA3"
+  },
+  {
+    "id": 22222222,
+    "user": 294205,
+    "targetAccount": 5570192,
+    "sourceAccount": null,
+    "quote": 113371,
+    "status": "funds_refunded",
+    "reference": "",
+    "rate": 1.1179,
+    "created": "2018-12-26 15:25:51",
+    "business": null,
+    "transferRequest": null,
+    "details": {
+      "reference": ""
+    },
+    "hasActiveIssues": false,
+    "sourceValue": 1000,
+    "sourceCurrency": "EUR",
+    "targetValue": 895.32,
+    "targetCurrency": "GPB",
+    "customerTransactionId": "785C67AD-7E29-4DBC-9D4A-4C45D4D5333A"
+  }
+]
