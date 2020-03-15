@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TransferWise;
 
@@ -12,9 +14,9 @@ use TransferWise\Service\Users;
 
 class SDK
 {
-    const API_MODE_LIVE = 'live';
-    const API_MODE_SANDBOX = 'sandbox';
-    private const API_ENDPOINT_LIVE = 'https://api.transferwise.com';
+    const API_MODE_LIVE                = 'live';
+    const API_MODE_SANDBOX             = 'sandbox';
+    private const API_ENDPOINT_LIVE    = 'https://api.transferwise.com';
     private const API_ENDPOINT_SANDBOX = 'https://api.sandbox.transferwise.tech';
 
     /**
@@ -48,24 +50,14 @@ class SDK
     }
 
     /**
-     * Create guzzle client, default to use sandbox endpoint
-     *
-     * @param string $token
-     * @param string $mode
-     * @return Client
+     * Create guzzle client, default to use sandbox endpoint.
      */
     public static function createClient(string $token, string $mode = self::API_MODE_SANDBOX): Client
     {
         $acceptedModes = [self::API_MODE_SANDBOX, self::API_MODE_LIVE];
 
         if (!in_array($mode, $acceptedModes)) {
-            throw new Exception(
-                sprintf(
-                    'API mode must be one of "%s" but got "%s"',
-                    join(', ', $acceptedModes),
-                    $mode
-                )
-            );
+            throw new Exception(sprintf('API mode must be one of "%s" but got "%s"', join(', ', $acceptedModes), $mode));
         }
 
         $endpoints = [

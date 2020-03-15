@@ -4,18 +4,18 @@ namespace TransferWise\Model;
 
 class Address extends BaseModel
 {
-    /**@var string */
+    /** @var string */
     public $city;
 
-    /**@var string */
+    /** @var string */
     public $countryCode;
 
-    /**@var string */
+    /** @var string */
     public $postCode;
 
-    /**@var string */
+    /** @var string */
     public $state;
 
-    /**@var string */
+    /** @var string */
     public $firstLine;
 }

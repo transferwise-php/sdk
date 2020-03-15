@@ -3,10 +3,9 @@
 namespace TranferWise\Test;
 
 use GuzzleHttp\ClientInterface;
-use function GuzzleHttp\Psr7\stream_for;
 use function GuzzleHttp\Psr7\parse_response;
 use GuzzleHttp\Psr7\Response;
-use Prophecy\Argument;
+use function GuzzleHttp\Psr7\stream_for;
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
@@ -37,7 +36,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         $path = $this->rootFixturesDir.'/Fixtures/'.$file.'.resp';
 
         if (!file_exists($path)) {
-            throw new \RuntimeException(sprintf("%s does not exist", $path));
+            throw new \RuntimeException(sprintf('%s does not exist', $path));
         }
 
         return parse_response(file_get_contents($path));

@@ -16,10 +16,10 @@ class TransfersTest extends TestCase
         parent::setUp();
 
         $this->rootFixturesDir = __DIR__;
-        $this->service = new Transfers($this->client->reveal());
+        $this->service         = new Transfers($this->client->reveal());
     }
 
-    public function test_list()
+    public function testList()
     {
         $this->setupMock('GET', '/v1/transfers', null, [], 'get_transfers');
         $transfers = $this->service->list();
@@ -50,7 +50,7 @@ class TransfersTest extends TestCase
         $this->assertEquals('6D9188CF-FA59-44C3-87A2-4506CE9C1EA3', $t->customerTransactionId);
     }
 
-    public function test_list_with_filters()
+    public function testListWithFilters()
     {
         $params = [
             'sourceCurrency'   => 'USD',

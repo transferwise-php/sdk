@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TransferWise\Service;
 
@@ -8,7 +10,7 @@ use TransferWise\Model\BaseModel;
 
 abstract class BaseService
 {
-    /**@var ClientInterface */
+    /** @var ClientInterface */
     protected $client;
 
     public function __construct(ClientInterface $client)
@@ -20,6 +22,7 @@ abstract class BaseService
     {
         /** @var BaseModel $instance */
         $instance = new $class();
+
         return $instance->enumerateFromResponse($response);
     }
 }

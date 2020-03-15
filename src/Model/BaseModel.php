@@ -2,8 +2,8 @@
 
 namespace TransferWise\Model;
 
-use Psr\Http\Message\ResponseInterface;
 use function GuzzleHttp\json_decode;
+use Psr\Http\Message\ResponseInterface;
 use TransferWise\Exception\UnexpectedResponseException;
 
 abstract class BaseModel
@@ -11,7 +11,6 @@ abstract class BaseModel
     protected $mapping = [];
 
     /**
-     * @param array $array
      * @return $this
      */
     public function populateFromArray(array $array)
@@ -19,8 +18,8 @@ abstract class BaseModel
         foreach ($array as $key => $val) {
             // If key exists in mapping
             if (isset($this->mapping[$key])) {
-                /**@var BaseModel $subClass */
-                $subClass = new $this->mapping[$key]();
+                /** @var BaseModel $subClass */
+                $subClass     = new $this->mapping[$key]();
                 $this->{$key} = $subClass->populateFromArray($val);
                 continue;
             }
@@ -39,7 +38,7 @@ abstract class BaseModel
             return $this;
         }
 
-        $json = json_decode((string)$response->getBody(), true);
+        $json = json_decode((string) $response->getBody(), true);
         if (!empty($json)) {
             $this->populateFromArray($json);
         }
@@ -53,7 +52,7 @@ abstract class BaseModel
             return $this;
         }
 
-        $json = json_decode((string)$response->getBody(), true);
+        $json = json_decode((string) $response->getBody(), true);
 
         if (!is_array($json)) {
             throw new UnexpectedResponseException('Expect response as an array');

@@ -4,22 +4,22 @@ namespace TransferWise\Model;
 
 class Token extends BaseModel
 {
-    /**@var string */
+    /** @var string */
     public $id;
 
-    /**@var string */
+    /** @var string */
     public $name;
 
-    /**@var string */
+    /** @var string */
     public $email;
 
-    /**@var bool */
+    /** @var bool */
     public $active;
 
-    /**@var TokenDetails */
+    /** @var TokenDetails */
     public $details;
 
     protected $mapping = [
-        'details' => TokenDetails::class
+        'details' => TokenDetails::class,
     ];
 }

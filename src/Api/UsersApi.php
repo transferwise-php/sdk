@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TransferWise\Api;
 
@@ -8,7 +10,7 @@ class UsersApi extends AbstractApi
     {
         return [
             'method' => 'GET',
-            'path' => 'me',
+            'path'   => 'me',
             'params' => [],
         ];
     }

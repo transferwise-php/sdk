@@ -4,28 +4,28 @@ namespace TransferWise\Model;
 
 class TokenDetails extends BaseModel
 {
-    /**@var string */
+    /** @var string */
     public $firstName;
 
-    /**@var string */
+    /** @var string */
     public $lastName;
 
-    /**@var string */
+    /** @var string */
     public $phoneNumber;
 
-    /**@var string */
+    /** @var string */
     public $occupation;
 
-    /**@var Address */
+    /** @var Address */
     public $address;
 
-    /**@var string */
+    /** @var string */
     public $dateOfBirth;
 
-    /**@var string */
+    /** @var string */
     public $avatar;
 
-    /**@var string */
+    /** @var string */
     public $primaryAddress;
 
     protected $mapping = [

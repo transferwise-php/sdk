@@ -58,7 +58,6 @@ class Transfer extends BaseModel
     /** @var string */
     public $customerTransactionId;
 
-
     protected $mapping = [
         'details' => TransferDetails::class,
     ];

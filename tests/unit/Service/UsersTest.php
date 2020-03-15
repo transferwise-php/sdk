@@ -17,10 +17,10 @@ class UsersTest extends TestCase
         parent::setUp();
 
         $this->rootFixturesDir = __DIR__;
-        $this->service = new UsersService($this->client->reveal());
+        $this->service         = new UsersService($this->client->reveal());
     }
 
-    public function test_me()
+    public function testMe()
     {
         $this->setupMock('GET', '/v1/me', [], [], 'get_me');
         $token = $this->service->me();
