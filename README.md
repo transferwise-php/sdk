@@ -1,5 +1,7 @@
 # TransferWise SDK (v1 API Binding for PHP 7)
 
+[![Build Status](https://travis-ci.org/transferwise-php/sdk.svg?branch=master)](https://travis-ci.org/transferwise-php/sdk) ![PHP from Travis config](https://img.shields.io/travis/php-v/transferwise-php/sdk/master)
+
 > **Note**: This library is under active development as we expand it to cover
 > our (expanding!) API. Consider the public API of this package a little
 > unstable as we work towards a v1.0.
