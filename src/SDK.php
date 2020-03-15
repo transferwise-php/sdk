@@ -51,6 +51,11 @@ class SDK
 
     /**
      * Create guzzle client, default to use sandbox endpoint.
+     *
+     * @param string $token
+     * @param string $mode
+     *
+     * @return Client
      */
     public static function createClient(string $token, string $mode = self::API_MODE_SANDBOX): Client
     {
@@ -62,7 +67,7 @@ class SDK
 
         $endpoints = [
             self::API_MODE_SANDBOX  => self::API_ENDPOINT_SANDBOX,
-            self::API_ENDPOINT_LIVE => self::API_ENDPOINT_LIVE,
+            self::API_MODE_LIVE => self::API_ENDPOINT_LIVE,
         ];
 
         $userAgent = sprintf(
@@ -78,6 +83,7 @@ class SDK
                     'User-Agent'    => $userAgent,
                     'Authorization' => 'Bearer '.$token,
                 ],
+                'debug' => 'true',
             ]
         );
     }

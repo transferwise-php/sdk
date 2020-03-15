@@ -20,6 +20,9 @@ class Transfer extends BaseModel
     public $quote;
 
     /** @var string */
+    public $quoteUuid;
+
+    /** @var string */
     public $status;
 
     /** @var string */

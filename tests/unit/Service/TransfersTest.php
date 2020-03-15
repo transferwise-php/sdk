@@ -34,6 +34,7 @@ class TransfersTest extends TestCase
         $this->assertEquals(7993919, $t->targetAccount);
         $this->assertEquals(null, $t->sourceAccount);
         $this->assertEquals(113379, $t->quote);
+        $this->assertEquals('e0c9368a-b13d-4c76-bfe6-c9a5226efb95', $t->quoteUuid);
         $this->assertEquals('funds_refunded', $t->status);
         $this->assertEquals('good times', $t->reference);
         $this->assertEquals(1.1179, $t->rate);
