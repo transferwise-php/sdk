@@ -43,8 +43,8 @@ require 'vendor/autoload.php';
 
 use TransferWise\SDK;
 
-$token = 'your-api-token-here';
-$client = SDK::createClient($token, SDK::API_MODE_SANDBOX);
+$apiKey = 'your-api-key-here';
+$client = SDK::createClient($apiKey, SDK::API_MODE_SANDBOX);
 $sdk = new SDK($client);
 
 // Show current authenticated user
